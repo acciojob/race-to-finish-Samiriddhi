@@ -1,4 +1,4 @@
-
+window.promises=[];
 
 // Do not change the code above this
 // add your promises to the array `promises`
@@ -18,13 +18,14 @@ const promises = [
   getRandomTimePromise(),
   getRandomTimePromise()
 ];
+window.promises = promises;
 
 // Use Promise.any to wait for the first promise to resolve
 Promise.any(promises)
   .then((result) => {
     // Print the result to the div with id "output"
     const outputDiv = document.getElementById("output");
-    outputDiv.textContent = `Resolved value: ${result}`;
+    outputDiv.textContent = result;
   })
   .catch((error) => {
     // If all promises reject, handle the error here
